@@ -22,6 +22,8 @@ Write a function named addOne that, given an array of numbers, uses map to retur
 
 const addOne = (arr) => {
   // Solution code here...
+  let newArray = arr.map(arrNum => arrNum + 1);
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -206,7 +208,7 @@ describe('Testing challenge 1', () => {
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should add one to all the numbers in the array', () => {
     expect(addOne([2, 3, 5, 11])).toStrictEqual([3, 4, 6, 12]);
   });
