@@ -217,8 +217,28 @@ const snorlaxStats = {
   weight: 4600,
 };
 
-const extractStats = (arr) => {
-  // Solution code here...
+//Erik Savage intial attempt... on line 229 it console logs the right obect but when pushed or maped it only logs the special attack line three times in a row. TA or myself could not understand this!
+// const extractStats = (arr) => { //snolaxStats.stats
+//   // Solution code here...
+//   let currentStat = {};
+//   let newArray = [];
+//   let statObjectArray = arr.map(statObj => {
+//     currentStat.name = statObj.stat.name;
+//     currentStat.total = statObj.effort + statObj.baseStat;
+//     newArray.push(currentStat);
+//     console.log(currentStat); //console logs the correct object here
+//     return currentStat;
+//   });
+//   console.log(newArray);
+//   return statObjectArray;
+// };
+
+// Alexander Williams helped with writing this code...
+const extractStats = (arr) => { //snolaxStats.stats
+  return arr.map(statObj => ({
+    name: statObj.stat.name,
+    total: statObj.effort + statObj.baseStat
+  }));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -319,7 +339,7 @@ describe('Testing challenge 9', () => {
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should return an array containing objects with name and total values', () => {
     expect(extractStats(snorlaxStats.stats)).toStrictEqual([
       { name: 'speed', total: 35, },
