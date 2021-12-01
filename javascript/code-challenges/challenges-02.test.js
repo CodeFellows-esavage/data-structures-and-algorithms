@@ -217,7 +217,8 @@ const snorlaxStats = {
   weight: 4600,
 };
 
-//Erik Savage intial attempt... on line 229 it console logs the right obect but when pushed or maped it only logs the special attack line three times in a row. TA or myself could not understand this!
+//Erik Savage intial attempt...
+// This doesn't work because I am storing currentStat in an object, and passing that object address into the location, when I update the object at each return I am still passing in the same address but now that object represents the new set of name and stats, so that is why the array when logged out shows three of the same, becuase its storing the same object at each index.
 // const extractStats = (arr) => { //snolaxStats.stats
 //   // Solution code here...
 //   let currentStat = {};
@@ -230,6 +231,7 @@ const snorlaxStats = {
 //     return currentStat;
 //   });
 //   console.log(newArray);
+//   console.log(statObjectArray);
 //   return statObjectArray;
 // };
 
