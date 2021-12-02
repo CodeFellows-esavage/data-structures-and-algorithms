@@ -245,7 +245,7 @@ const sortMeetingsByDay = (arr) => {
     Thursday: 4,
     Friday: 5,
   };
-// help from https://www.tutorialspoint.com/sorting-objects-according-to-days-name-javascript
+  // help from https://www.tutorialspoint.com/sorting-objects-according-to-days-name-javascript
   return arr.sort((a, b) => {
     return dayValue[a.dayOfWeek] - dayValue[b.dayOfWeek];
   });
@@ -263,7 +263,32 @@ You DO NOT need to use your solution to Challenge 9 in completing Challenge 10.
 
 const sortSchedule = (arr) => {
   // Solution code here...
+  const dayValue = {
+    Monday: 0,
+    Tuesday: 1,
+    Wednesday: 2,
+    Thursday: 4,
+    Friday: 5,
+  };
+  // help from https://www.tutorialspoint.com/sorting-objects-according-to-days-name-javascript
+  return arr.sort((a, b) => {
+    if(dayValue[a.dayOfWeek] < dayValue[b.dayOfWeek]){
+      return -1;
+    }
+    if(dayValue[a.dayOfWeek] > dayValue[b.dayOfWeek]){
+      return 1;
+    }
+    if(a.start < b.start){
+      return -1;
+    }
+    if(a.start > b.start){
+      return 1;
+    }
+    return (a.end - a.start) - (b.end - b.start);
+  });
+
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
@@ -406,7 +431,7 @@ describe('Testing challenge 12', () => {
   });
 });
 
-xdescribe('Testing challenge 13', () => {
+describe('Testing challenge 13', () => {
   test('It should sort meetings by when they happen', () => {
     expect(sortSchedule(meetings)).toStrictEqual([
       new Meeting('Monday', '0900', '0945'),
