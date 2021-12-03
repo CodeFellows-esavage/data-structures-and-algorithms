@@ -25,8 +25,11 @@ Write a function named addValues that, given an array of numbers as input, uses 
 
 const addValues = (arr) => {
   // Solution code here...
+  return arr.reduce((pV, cV) => {
+    console.log(pV, cV);
+    return pV + cV; //sets pV
+  }, 0);
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -290,7 +293,7 @@ describe('Testing challenge 1', () => {
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should add the values of an array', () => {
     expect(addValues([1, 2, 3, 4, 5])).toStrictEqual(15);
     expect(addValues([])).toStrictEqual(0);
