@@ -1,5 +1,7 @@
 'use strict';
 
+const { children } = require("cheerio/lib/api/traversing");
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
@@ -58,7 +60,7 @@ Note: You may not use the array's built-in length property.
 
 const countNumberOfElements = (arr) => {
   // Solution code here...
-  return arr.reduce((pV, cV) => {
+  return arr.reduce((pV) => {
     return pV + 1;
   }, 0);
 };
@@ -140,7 +142,6 @@ const reversedString = (str) => {
   // Solution code here...
   let strArr = str.split('');
   return strArr.reduce((revStr, currentLetter) => {
-    console.log(revStr);
     return currentLetter + revStr;
   }, '');
 };
@@ -196,6 +197,14 @@ const characters = [
 
 const countNumberOfChildren = (arr) => {
   // Solution code here...
+  return arr.reduce((childCount, famObj) => {
+    if(famObj.children){
+      childCount + famObj.children.length;
+      return childCount + famObj.children.length;
+    } else{
+      return childCount;
+    }
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -208,6 +217,7 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 
 const calculateAverage = (arr) => {
   // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -342,7 +352,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return the total number of children', () => {
     expect(countNumberOfChildren(characters)).toStrictEqual(14);
   });
