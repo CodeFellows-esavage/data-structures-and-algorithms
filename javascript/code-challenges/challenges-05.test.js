@@ -217,7 +217,12 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 
 const calculateAverage = (arr) => {
   // Solution code here...
-
+  const avgObj = arr.reduce((tracker, crtNum) => {
+    tracker.sum = tracker.sum + crtNum;
+    tracker.count = tracker.count + 1;
+    return tracker;
+  }, { count: 0, sum: 0 });
+  return avgObj.sum / avgObj.count;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -358,7 +363,7 @@ describe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return the average of the numbers in the array', () => {
     expect(calculateAverage([18, 290, 37, 4, 55, 16, 7, 85 ])).toStrictEqual(64);
   });
