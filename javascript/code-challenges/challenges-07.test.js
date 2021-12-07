@@ -1,5 +1,7 @@
 'use strict';
 
+const { first } = require("cheerio/lib/api/traversing");
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
@@ -82,7 +84,6 @@ const howMuchPencil = (str) => {
   for(let i = 0; i < str.length + 1; i ++){
     // if(sharpenedStr.length > 0){
     result.push(sharpenedStr.join(''));
-    console.log(sharpenedStr.join(''));
     sharpenedStr = sharpenedStr.slice(1);
   }
   return result;
@@ -145,7 +146,13 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  // Solution code here... assistance from Andrew Enyeart
+  recipe.ingredients.forEach(ingredient => {
+    let firstIndex = ingredient.indexOf(' ') + 1;
+
+    let secondIndex = ingredient.indexOf(' ', firstIndex) + 1;
+    result.push(ingredient.slice(secondIndex));
+  });
   return result;
 };
 
@@ -303,7 +310,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return a list of foods', () => {
     expect(listFoods(gruffaloCrumble)).toStrictEqual(['Gruffalo', 'oats', 'brown sugar', 'flour', 'pure maple syrup', 'chopped nuts', 'baking soda', 'baking powder', 'cinnamon', 'melted butter', 'fresh water']);
     expect(listFoods(gruffaloCrumble).length).toStrictEqual(11);
