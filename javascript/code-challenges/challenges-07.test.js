@@ -49,15 +49,17 @@ Write a function named joinArray that takes an array and joins all of the elemen
 
 const joinArray = (arr) => {
   // Solution code here...
-  let arrayStr = '';
-  arr.forEach((indx, i) => {
-    if(i < arr.length - 1){
-      arrayStr = arrayStr + `${indx} `;
-    } else{
-      arrayStr = arrayStr + `${indx}`;
-    }
-  });
-  return arrayStr;
+  // let arrayStr = '';
+  // arr.forEach((indx, i) => {
+  //   if(i < arr.length - 1){
+  //     arrayStr = arrayStr + `${indx} `;
+  //   } else{
+  //     arrayStr = arrayStr + `${indx}`;
+  //   }
+  // });
+  // return arrayStr;
+
+  return arr.join(' ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -76,6 +78,13 @@ For example, if the input is 'Welcome', the output will be:
 const howMuchPencil = (str) => {
   let result = [];
   // Solution code here...
+  let sharpenedStr = str.split('');
+  for(let i = 0; i < str.length + 1; i ++){
+    // if(sharpenedStr.length > 0){
+    result.push(sharpenedStr.join(''));
+    console.log(sharpenedStr.join(''));
+    sharpenedStr = sharpenedStr.slice(1);
+  }
   return result;
 };
 
@@ -275,7 +284,7 @@ describe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return a list of shortening words', () => {
     expect(howMuchPencil('Welcome')).toStrictEqual(['Welcome', 'elcome', 'lcome', 'come', 'ome', 'me', 'e', '']);
     expect(howMuchPencil('Welcome').length).toStrictEqual(8);
