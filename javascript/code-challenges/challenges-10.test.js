@@ -58,6 +58,14 @@ return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
   // Solution code here...
+  let matrixSum = 0;
+  for( let i = 0; i < matrix.length; i++){
+    matrixSum = matrix[i].reduce((sum, cur) =>{
+      sum = sum + cur;
+      return sum;
+    }, matrixSum);
+  }
+  return matrixSum;
 };
 
 
@@ -242,7 +250,7 @@ describe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should return the total sum', () => {
     expect(totalSum([[13,24,24,2], [2,5,6], [2,3]])).toStrictEqual(81);
     expect(totalSum([])).toStrictEqual(0);
