@@ -144,6 +144,15 @@ const errands = [
 
 const howManyTreats = (arr) => {
   // Solution code here...
+  let itemQty = 0;
+  arr.forEach(storeObj => {
+    storeObj.items.forEach(listObj => {
+      if(listObj.name === 'Treats'){
+        itemQty = listObj.quantity;
+      }
+    });
+  });
+  return itemQty;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -295,7 +304,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return the number 24', () => {
     expect(howManyTreats(errands)).toStrictEqual(24);
   });
