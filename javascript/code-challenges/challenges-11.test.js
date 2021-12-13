@@ -20,7 +20,8 @@ Becomes:
 
 function transformToLis(obj){
   // Solution code here...
-};
+  return Object.entries(obj).map(arr => `<li>${arr[0]}: ${arr[1]}</li>`);
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
