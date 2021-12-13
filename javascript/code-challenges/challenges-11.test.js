@@ -55,6 +55,13 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 
 const totalSum = (input) => {
   // Solution code here...
+  // let subSum = [];
+  const subSum = input.map(arr => arr.reduce((sum, cur) => {
+    sum = sum + cur;
+    return sum;
+  }, 0));
+  return subSum.reduce((sum, cur) => sum = sum + cur);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -180,7 +187,7 @@ describe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should add all the numbers in the arrays', () => {
     const nums = [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]];
 
