@@ -38,6 +38,8 @@ If the word is between 5 and 10 characters long, return true. Otherwise, return 
 
 const validateWord = (word) => {
   // Solution code here...
+  const regEx = /^(\D){5,10}$/g;
+  return regEx.test(word);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -139,7 +141,7 @@ describe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should validate a word between 5 and 10 characters', () => {
     expect(validateWord('Hello')).toBeTruthy();
     expect(validateWord('Bob')).toBeFalsy();
