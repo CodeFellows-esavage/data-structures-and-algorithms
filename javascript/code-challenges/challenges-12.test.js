@@ -8,6 +8,9 @@ Write a function named replaceZeros that, given a string, uses Regex to replace 
 
 const replaceZeros = (string) => {
   // Solution code here...
+  const regEx = /[0]/g;
+  return string.replace(regEx, 'zero');
+
 };
 
 /* ------------------------------------------------------------------------------------------------
