@@ -160,11 +160,17 @@ let findMaleAndFemale = (data) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
-Write a function named findShortest that, given the Star Wars data from Challenge 6, uses any combination of filter, map and reduce to return the name of the character who is the shortest in height.
+Write a function named findShortest that, given the Star Wars data from Challenge 5, uses any combination of filter, map and reduce to return the name of the character who is the shortest in height.
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
   // Solution code here...
+  let heights = Object.values(data).map(charObj => charObj.height);
+
+  let shortest = heights.sort((a, b) => a - b)[0];
+
+  let shortestChar = data.filter(charObj => charObj.height === shortest)[0].name;
+  return shortestChar;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -227,7 +233,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return the name of the shortest character', () => {
     expect(findShortest(starWarsData)).toStrictEqual('R2-D2');
   });
