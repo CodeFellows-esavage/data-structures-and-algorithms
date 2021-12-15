@@ -74,6 +74,8 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 
 const validateEmail = (email) => {
   // Solution code here...
+  const regEx = /^\w+\.?\w+[@]\w+\.(com|net|org)\b/g;
+  return regEx.test(email);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -168,7 +170,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should match a basic email', () => {
     expect(validateEmail('joe@codefellows.com')).toBeTruthy();
   });
