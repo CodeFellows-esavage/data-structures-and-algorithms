@@ -73,7 +73,7 @@ const standardizePhoneNumbers = (arr) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 5 
+CHALLENGE 5
 
 Write a function named onlyOddChars that takes in a string and returns only the odd-index characters from that string.
 
@@ -90,13 +90,18 @@ const onlyOddChars = (str) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 6 
+CHALLENGE 6
 
 Write a function named allHappy that takes in an array of strings and returns a Boolean indicating whether all those strings contain ":)".
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
   // Solution code here...
+  let countTrue = 0;
+  arr.forEach(str => {
+    if (str.includes(':)')) countTrue = countTrue + 1;
+  });
+  return arr.length === countTrue ? true : false;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -207,7 +212,7 @@ describe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should return only the strings that contain smiley faces', () => {
     const words = ['things', 'apple (:)', ':)banana', 'missing that thing', 'cant:)aloupe'];
 
@@ -236,7 +241,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should correctly assess whether all the strings are happy', () => {
     const words = ['things', 'apple (:)', ':)banana', 'missing that thing', 'cant:)aloupe'];
 
