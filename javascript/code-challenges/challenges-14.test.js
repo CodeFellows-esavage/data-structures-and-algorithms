@@ -12,7 +12,9 @@ Write a function named screenForNames that takes in an array of strings and uses
 
 const screenForNames = (arr) => {
   // Solution code here...
-}
+  const regEx = /([DMrs.]+)( {1})([A-Z])([A-Za-z ]+)/gm;
+  return arr.filter(str => regEx.test(str));
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
