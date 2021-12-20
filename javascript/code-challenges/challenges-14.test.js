@@ -136,11 +136,10 @@ This data could be sorted by name or price.
 
 const sortBy = (property, arr) => {
   // Solution code here...
-  let p = property;
-  arr.sort((a, b) => {
-    if (a.p < b.p) -1;
-    if (a.p > b.p) 1;
-    if (a.p === b.p) 0;
+  return arr.sort((a, b) => {
+    if (a[property] < b[property]) return -1;
+    if (a[property] > b[property]) return 1;
+    if (a[property] === b[property]) return 0;
   });
 };
 
@@ -163,7 +162,7 @@ const isSecure = (url) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 6 
+CHALLENGE 6
 
 Write a function named detectTicTacToeWin that accepts a two-dimensional array of strings. Each string is guaranteed to be either "X", "O" or an empty string. Your function should check to see if any row, column, or either diagonal direction has three matching "X" or "O" symbols (non-empty strings), three-in-a-line.
 
@@ -251,7 +250,7 @@ describe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should sort items by a price', () => {
 
     expect(sortBy('price', [
