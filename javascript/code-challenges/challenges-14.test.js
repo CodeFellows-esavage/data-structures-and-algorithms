@@ -105,6 +105,19 @@ let starWarsData = [{
 
 let biggerThanLuke = (arr) => {
   // Solution code here...
+  if (arr.length > 0) {
+    let charToCompare = arr.filter(charObj => charObj.name === 'Luke Skywalker')[0];
+    const targetMass = charToCompare.mass;
+    console.log(targetMass);
+    const heavierChars = [];
+    arr.forEach(charObj => {
+      if (Number(charObj.mass) > Number(targetMass)) heavierChars.push(charObj.name);
+    });
+    console.log(heavierChars);
+    return heavierChars.join(' - ');
+  } else {
+    return '';
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -191,7 +204,7 @@ describe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should return only characters that are bigger than Luke', () => {
     expect(biggerThanLuke(starWarsData)).toStrictEqual('Darth Vader - Pex Kylar');
     expect(biggerThanLuke([])).toStrictEqual('');
