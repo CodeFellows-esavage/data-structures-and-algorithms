@@ -1,5 +1,7 @@
 'use strict';
 
+const { val } = require("cheerio/lib/api/attributes");
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
@@ -143,7 +145,7 @@ const sortBy = (property, arr) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 5 
+CHALLENGE 5
 
 Write a function that determines if a given URL is secure, beginning with https://
 
@@ -156,6 +158,8 @@ https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
   // Solution code here...
+  const regEx = /^(https:)(\/{2})(\w+)(\.)(\w+)/gm;
+  return regEx.test(url);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -176,9 +180,41 @@ Here is a sample board:
   ['X', 'O', 'X'],
 ];
 ------------------------------------------------------------------------------------------------ */
+const helpCheck = (board, rowA, colA, rowB, colB, rowC, colC) => {
+  let valToMatch = board[rowA][colA];
+  if (valToMatch === '') {
+    return false;
+  } else if (board[rowB][colB] !== valToMatch) {
+    return false;
+  } else if (board[rowC][colC] !== valToMatch) {
+    return false;
+  } else {
+    return true;
+  }
+};
 
 const detectTicTacToeWin = (board) => {
   // Solution code here...
+  //some loop that if helpCheck === true, return true and break the loop
+  let validWin = false;
+  //check rows
+  for (let i = 0; i < 3; i++) {
+    if (helpCheck(board, i, 0, i, 1, i, 2) === true) validWin = true;
+  }
+  //check cols
+  for (let i = 0; i < 3; i++) {
+    if (helpCheck(board, 0, i, 1, i, 2, i) === true) validWin = true;
+  }
+  //check diagnoal 1
+  for (let i = 0; i < 3; i++) {
+    if (helpCheck(board, 0, 0, 1, 1, 2, 2) === true) validWin = true;
+  }
+  //check diagnoal 2
+  for (let i = 0; i < 3; i++) {
+    if (helpCheck(board, 2, 0, 1, 1, 0, 2) === true) validWin = true;
+  }
+  return validWin;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -244,7 +280,7 @@ xdescribe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should check if url is https', () => {
 
     expect(isSecure('http://www.insecure.com')).toBe(false);
@@ -253,7 +289,7 @@ xdescribe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return true if there are three in a row', () => {
     expect(detectTicTacToeWin([['X', '', 'O'], ['X', 'O', ''], ['X', 'O', 'X']])).toStrictEqual(true);
     expect(detectTicTacToeWin([['O', '', 'X'], ['X', 'O', 'X'], ['X', '', 'O']])).toStrictEqual(true);
