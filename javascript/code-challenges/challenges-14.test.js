@@ -108,12 +108,10 @@ let biggerThanLuke = (arr) => {
   if (arr.length > 0) {
     let charToCompare = arr.filter(charObj => charObj.name === 'Luke Skywalker')[0];
     const targetMass = charToCompare.mass;
-    console.log(targetMass);
     const heavierChars = [];
     arr.forEach(charObj => {
       if (Number(charObj.mass) > Number(targetMass)) heavierChars.push(charObj.name);
     });
-    console.log(heavierChars);
     return heavierChars.join(' - ');
   } else {
     return '';
@@ -136,6 +134,12 @@ This data could be sorted by name or price.
 
 const sortBy = (property, arr) => {
   // Solution code here...
+  let p = property;
+  arr.sort((a, b) => {
+    if (a.p < b.p) -1;
+    if (a.p > b.p) 1;
+    if (a.p === b.p) 0;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
