@@ -57,13 +57,12 @@ class LinkedList {
   }
 }
 
-let list = new LinkedList();
-
-list.insert('c');
-list.insert('b');
-list.insert('a');
-console.log(JSON.stringify(list));
-console.log(list.includes('d'));
-console.log(list.toString());
+// let list = new LinkedList();
+// list.insert('c');
+// list.insert('b');
+// list.insert('a');
+// console.log(JSON.stringify(list));
+// console.log(list.includes('d'));
+// console.log(list.toString());
 
 module.exports = LinkedList;
