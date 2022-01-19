@@ -24,3 +24,4 @@ To run your tests
 - [Challenge 03 - array binary search](javascript/code-challenges/array-binary-search/README.md)
 - [Challenge 05 - linked list](javascript/linked-list/../code-challenges/linked-list/README.md)
 - [Challenge 06 - linked list insertions](javascript/code-challenges/linked-list-insertions/README.md)
+- [Challenge 07 - linked list kth](javascript/code-challenges/linked-list-kth/README.md)
