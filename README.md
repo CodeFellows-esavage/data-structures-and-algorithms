@@ -25,3 +25,4 @@ To run your tests
 - [Challenge 05 - linked list](javascript/linked-list/../code-challenges/linked-list/README.md)
 - [Challenge 06 - linked list insertions](javascript/code-challenges/linked-list-insertions/README.md)
 - [Challenge 07 - linked list kth](javascript/code-challenges/linked-list-kth/README.md)
+- [Challenge 08 - linked list zip](javascript/code-challenges/linked-list-zip/README.md)
