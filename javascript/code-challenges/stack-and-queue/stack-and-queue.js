@@ -29,7 +29,6 @@ class Stack {
     return value;
   }
   isEmpty() {
-    console.log(this.top === null);
     let result;
     this.top === null ? result = true : result = false;
     return result;
@@ -41,31 +40,38 @@ class Queue {
     this.front = null;
     this.back = null;
   }
+  enqueue(value) {
+    let node = new Node(value);
+
+    if (this.front === null) {
+      this.front = node;
+      this.back = node;
+    } else {
+      this.back.next = node;
+      this.back = node;
+    }
+  }
+  dequeue() {
+    if (this.front === null) return 'Exception';
+    let removed = this.front;
+    if (removed.next === null) {
+      this.back = null;
+    }
+    this.front = this.front.next;
+    removed.next = null;
+    return removed.value;
+  }
+  peek() {
+    if (this.front === null) return 'Exception';
+    let value = this.front.value;
+    return value;
+  }
+  isEmpty() {
+    let result;
+    this.front === null ? result = true : result = false;
+    return result;
+  }
 }
-
-let stack = new Stack();
-stack.push('a');
-stack.push('b');
-stack.push('c');
-console.log(JSON.stringify(stack));
-
-console.log(stack.isEmpty());
-console.log(stack.peek());
-stack.pop();
-console.log(JSON.stringify(stack));
-
-console.log(stack.isEmpty());
-console.log(stack.peek());
-stack.pop();
-console.log(JSON.stringify(stack));
-
-console.log(stack.isEmpty());
-console.log(stack.peek());
-stack.pop();
-console.log(JSON.stringify(stack));
-
-console.log(stack.isEmpty());
-console.log(stack.peek());
 
 module.exports = {
   Stack,

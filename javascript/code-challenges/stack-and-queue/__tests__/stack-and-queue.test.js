@@ -72,3 +72,69 @@ describe('Testing Stack Methods:', () => {
   });
 });
 
+describe('Testing Queue Methods:', () => {
+  it('should instantiate an empty queue', () => {
+    let queue = new Queue;
+
+    expect(queue.front).toBeNull();
+    expect(queue.back).toBeNull();
+    expect(queue).toBeInstanceOf(Queue);
+  });
+
+  it('should raise and exception calling dequeue on an empty queue', () => {
+    let queue = new Queue;
+    let result = queue.dequeue();
+    expect(result).toEqual('Exception');
+  });
+
+  it('should raise and exception calling peek on an empty queue', () => {
+    let queue = new Queue;
+    let result = queue.peek();
+    expect(result).toEqual('Exception');
+  });
+
+  it('should enqueue onto an empty queue', () => {
+    let queue = new Queue;
+    queue.enqueue('a');
+    expect(queue.front.value).toEqual('a');
+    expect(queue.back.value).toEqual('a');
+  });
+  it('should enqueue multiple values onto a queue', () => {
+    let queue = new Queue;
+    queue.enqueue('a');
+    queue.enqueue('b');
+    queue.enqueue('c');
+    expect(queue.front.value).toEqual('a');
+    expect(queue.back.value).toEqual('c');
+    expect(JSON.stringify(queue)).toEqual('{"front":{"value":"a","next":{"value":"b","next":{"value":"c","next":null}}},"back":{"value":"c","next":null}}');
+  });
+
+  it('should dequeue the node at the front and return the value', () => {
+    let queue = new Queue;
+    queue.enqueue('a');
+    queue.enqueue('b');
+    queue.enqueue('c');
+    let fullQueue = JSON.stringify(queue);
+    let result = queue.dequeue();
+
+    expect(fullQueue).toEqual('{"front":{"value":"a","next":{"value":"b","next":{"value":"c","next":null}}},"back":{"value":"c","next":null}}');
+    expect(result).toEqual('a');
+    expect(JSON.stringify(queue)).toEqual('{"front":{"value":"b","next":{"value":"c","next":null}},"back":{"value":"c","next":null}}');
+  });
+
+  it('should successfully empty a queue after multiple dequeues', () => {
+    let queue = new Queue;
+    queue.enqueue('a');
+    queue.enqueue('b');
+    queue.enqueue('c');
+    let fullQueue = JSON.stringify(queue);
+    queue.dequeue();
+    queue.dequeue();
+    queue.dequeue();
+
+    expect(fullQueue).toEqual('{"front":{"value":"a","next":{"value":"b","next":{"value":"c","next":null}}},"back":{"value":"c","next":null}}');
+    expect(queue.front).toBeNull();
+    expect(queue.back).toBeNull();
+    expect(JSON.stringify(queue)).toEqual('{"front":null,"back":null}');
+  });
+});
