@@ -195,7 +195,7 @@ console.log(ll2.toString());
 // console.log(list.toString());
 // console.log(list.kthFromEnd(4));
 // console.log(list);
-let ll3 = new LinkedList();
+// let ll3 = new LinkedList();
 
 
 // llZip(ll1, ll3);
