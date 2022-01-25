@@ -19,7 +19,7 @@ Using a Linked List as the underlying data storage mechanism, implement both a S
 
 ## Approach & Efficiency
 <!-- What approach did you take? Discuss Why. What is the Big O space/time for this approach? -->
-I utlized my white board model to help me walk through what I needed to do in order to properly create each method for both the stack and queue. I utilized console logs during development to check what my stacks and queues were doing. For llZip function, the efficency is O(n^2)) because worst case would be iterating through two whole linked list once and it scales directly with n (length of the lists).
+I utlized my white board model to help me walk through what I needed to do in order to properly create each method for both the stack and queue. I utilized console logs during development to check what my stacks and queues were doing.
 
 - Stack Methods Efficiency:
   - push(val) - O(1), only ever adds to the top, regardless of n one operation is performed
