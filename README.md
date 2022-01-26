@@ -28,3 +28,4 @@ To run your tests
 - [Challenge 08 - linked list zip](javascript/code-challenges/linked-list-zip/README.md)
 - [Challenge 10 - stack and queue](javascript/code-challenges/stack-and-queue/README.md)
 - [Challenge 11 - stack and queue pseudo](javascript/code-challenges/stack-queue-pseudo/README.md)
+- [Challenge 12 - animal shelter queue](javascript/code-challenges/stack-queue-animal-shelter/README.md)
