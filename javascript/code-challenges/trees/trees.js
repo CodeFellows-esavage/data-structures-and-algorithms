@@ -18,7 +18,7 @@ class BinaryTree {
     const order = [];
     let current = this.root;
 
-    if (!current) return 'Tree is empty';
+    if (!current) return 'EMPTY TREE';
 
     let traverse = (node) => {
       order.push(node.value);
@@ -36,7 +36,7 @@ class BinaryTree {
     const order = [];
     let current = this.root;
 
-    if (!current) return 'Tree is empty';
+    if (!current) return 'EMPTY TREE';
 
     let traverse = (node) => {
       if (node.left) traverse(node.left);
@@ -54,7 +54,7 @@ class BinaryTree {
     const order = [];
     let current = this.root;
 
-    if (!current) return 'Tree is empty';
+    if (!current) return 'EMPTY TREE';
 
     let traverse = (node) => {
       if (node.left) traverse(node.left);
@@ -74,7 +74,7 @@ class BST extends BinaryTree {
   // }
   add(value) {
     //allow for duplicates on the right
-    if (typeof (value) !== 'number') return 'Value must be a number';
+    if (typeof (value) !== 'number') return 'EXPECTED NUMBER';
 
     let node = new Node(value);
 
@@ -104,6 +104,29 @@ class BST extends BinaryTree {
 
   contains(value) {
     //return true or false if the value is in the tree
+    if (typeof (value) !== 'number') return 'EXPECTED NUMBER';
+    if (this.root === null) return 'EMPTY TREE';
+
+    let current = this.root;
+    let traverse = true;
+    while (traverse) {
+      if (value === current.value) return true;
+      if (value < current.value) {
+        if (current.left) {
+          current = current.left;
+        } else {
+          return false;
+        }
+      }
+      if (value > current.value) {
+        if (current.right) {
+          current = current.right;
+        } else {
+          return false;
+        }
+      }
+    }
+    traverse = false;
   }
 }
 
@@ -132,14 +155,30 @@ console.log(tree.postOrder());
 let bsTree = new BST;
 
 console.log(bsTree);
+console.log(bsTree.contains(10));
 bsTree.add(10);
 bsTree.add(8);
 bsTree.add(14);
+console.log(bsTree.add('a'));
 bsTree.add(5);
 bsTree.add(9);
 bsTree.add(12);
 bsTree.add(17);
 console.log(JSON.stringify(bsTree));
+console.log(bsTree.contains(10));
+console.log(bsTree.contains(14));
+console.log(bsTree.contains(12));
+console.log(bsTree.contains(8));
+console.log(bsTree.contains(9));
+console.log(bsTree.contains(18));
+console.log(bsTree.contains(1));
+console.log(bsTree.contains('a'));
+
+module.exports = {
+  BinaryTree,
+  BST,
+};
+
 
 
 
