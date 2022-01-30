@@ -126,53 +126,8 @@ class BST extends BinaryTree {
         }
       }
     }
-    traverse = false;
   }
 }
-
-let tree = new BinaryTree;
-let n1 = new Node(10);
-let n2 = new Node(8);
-let n3 = new Node(14);
-let n4 = new Node(5);
-let n5 = new Node(9);
-let n6 = new Node(12);
-let n7 = new Node(17);
-
-tree.root = n1;
-n1.left = n2;
-n1.right = n3;
-n2.left = n4;
-n2.right = n5;
-n3.left = n6;
-n3.right = n7;
-
-console.log(JSON.stringify(tree));
-console.log(tree.preOrder());
-console.log(tree.inOrder());
-console.log(tree.postOrder());
-
-let bsTree = new BST;
-
-console.log(bsTree);
-console.log(bsTree.contains(10));
-bsTree.add(10);
-bsTree.add(8);
-bsTree.add(14);
-console.log(bsTree.add('a'));
-bsTree.add(5);
-bsTree.add(9);
-bsTree.add(12);
-bsTree.add(17);
-console.log(JSON.stringify(bsTree));
-console.log(bsTree.contains(10));
-console.log(bsTree.contains(14));
-console.log(bsTree.contains(12));
-console.log(bsTree.contains(8));
-console.log(bsTree.contains(9));
-console.log(bsTree.contains(18));
-console.log(bsTree.contains(1));
-console.log(bsTree.contains('a'));
 
 module.exports = {
   BinaryTree,
