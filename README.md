@@ -30,3 +30,4 @@ To run your tests
 - [Challenge 11 - stack and queue pseudo](javascript/code-challenges/stack-queue-pseudo/README.md)
 - [Challenge 12 - animal shelter queue](javascript/code-challenges/stack-queue-animal-shelter/README.md)
 - [Challenge 13 - stack queue brackets](javascript/code-challenges/stack-queue-brackets/README.md)
+- [Challenge 15 - trees](javascript/code-challenges/trees/README.md)
