@@ -35,3 +35,5 @@ To run your tests
 - [Challenge 17 - tree breadth first](javascript/code-challenges/tree-breadth-first/README.md)
 - [Challenge 18 - tree fizz buzz](javascript/code-challenges/tree-fizz-buzz/README.md)
 - [Challenge 26 - insertion sort](javascript/code-challenges/insertion-sort/README.md)
+- [Challenge 27 - merge sort](javascript/code-challenges/merge-sort/README.md)
+- 
