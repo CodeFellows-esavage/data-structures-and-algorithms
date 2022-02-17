@@ -1,4 +1,4 @@
-# Insertion Sort
+# Merge Sort
 <!-- Description of the challenge -->
 Provided with the following code, walk through the values at each loop and code/test the solution.
 
