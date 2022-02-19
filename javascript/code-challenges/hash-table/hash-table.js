@@ -62,6 +62,18 @@ class HashTable {
     }
     return uniqueValues;
   }
+
+  contains(key) {
+
+    for (let i = 0; i < this.keyMap.length; i++) {
+      if (this.keyMap[i]) {
+        for (let j = 0; j < this.keyMap[i].length; j++) {
+          if (this.keyMap[i][j][0] === key) return true;
+        }
+      }
+    }
+    return false;
+  }
 }
 
 module.exports = HashTable;
