@@ -87,4 +87,18 @@ describe('Testing Hashtable Class', () => {
     expect(result4).toBeLessThan(5);
     expect(result5).toBeLessThan(5);
   });
+  it('should return true for a key in the table', () => {
+    let ht = new HashTable(5);
+    ht.set('testKey', 'testValue');
+
+    let result = ht.contains('testKey');
+    expect(result).toBeTruthy();
+  });
+  it('should return false for a key not in the table', () => {
+    let ht = new HashTable(5);
+    ht.set('testKey', 'testValue');
+
+    let result = ht.contains('badTestKey');
+    expect(result).toBeFalsy();
+  });
 });
