@@ -24,13 +24,11 @@ class HashTable {
     let bucket = this.keyMap[index];
 
     if (!bucket) return null;
-    if (bucket.length === 1) {
-      return bucket[0][1];
-    } else {
-      for (let i = 0; i < bucket.length; i++) {
-        if (bucket[i][0] === key) return bucket[i][1];
-      }
+
+    for (let i = 0; i < bucket.length; i++) {
+      if (bucket[i][0] === key) return bucket[i][1];
     }
+
     return null;
   }
 
@@ -65,24 +63,5 @@ class HashTable {
     return uniqueValues;
   }
 }
-
-let ht = new HashTable(5);
-console.log(ht);
-ht.set('Erik', 1986);
-ht.set('Duncan', 2013);
-ht.set('Amy', 1986);
-ht.set('Amy', 1986);
-ht.set('Kiera', 2016);
-ht.set('Ryan', 1983);
-ht.set('Gordon', 1990);
-ht.set('Josh', 1985);
-
-console.log(JSON.stringify(ht));
-
-console.log(ht.get('Duncan'));
-console.log(ht.get('Debra'));
-console.log(ht.get('Gordon'));
-console.log(ht.keys());
-console.log(ht.values());
 
 module.exports = HashTable;
