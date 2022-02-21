@@ -38,3 +38,4 @@ To run your tests
 - [Challenge 27 - merge sort](javascript/code-challenges/merge-sort/README.md)
 - [Challenge 28 - quick sort](javascript/code-challenges/quick-sort/README.md)
 - [Challenge 30 - hash table](javascript/code-challenges/hash-table/README.md)
+- [Challenge 31 - hashmap repeated word](javascript/code-challenges/hashmap-repeated-word/README.md)
