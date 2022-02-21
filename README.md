@@ -37,3 +37,4 @@ To run your tests
 - [Challenge 26 - insertion sort](javascript/code-challenges/insertion-sort/README.md)
 - [Challenge 27 - merge sort](javascript/code-challenges/merge-sort/README.md)
 - [Challenge 28 - quick sort](javascript/code-challenges/quick-sort/README.md)
+- [Challenge 30 - hash table](javascript/code-challenges/hash-table/README.md)
