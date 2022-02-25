@@ -40,3 +40,4 @@ To run your tests
 - [Challenge 30 - hash table](javascript/code-challenges/hash-table/README.md)
 - [Challenge 31 - hashmap repeated word](javascript/code-challenges/hashmap-repeated-word/README.md)
 - [Challenge 32 - tree intersection](javascript/code-challenges/tree-intersection/README.md)
+- [Challenge 33 - hashmap left join](javascript/code-challenges/hashmap-left-join/README.md)
