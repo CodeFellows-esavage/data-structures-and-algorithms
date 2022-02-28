@@ -42,3 +42,4 @@ To run your tests
 - [Challenge 32 - tree intersection](javascript/code-challenges/tree-intersection/README.md)
 - [Challenge 33 - hashmap left join](javascript/code-challenges/hashmap-left-join/README.md)
 - [Challenge 35 - graph](javascript/code-challenges/graph/README.md)
+- [Challenge 36 - graph breadth first traversal](javascript/code-challenges/graph-breadth-first/README.md)
