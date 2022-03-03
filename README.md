@@ -44,3 +44,4 @@ To run your tests
 - [Challenge 35 - graph](javascript/code-challenges/graph/README.md)
 - [Challenge 36 - graph breadth first traversal](javascript/code-challenges/graph-breadth-first/README.md)
 - [Challenge 37 - graph business trip function](javascript/code-challenges/graph-business-trip/README.md)
+- [Challenge 38 - graph depth first traversal](javascript/code-challenges/graph-depth-first/README.md)
